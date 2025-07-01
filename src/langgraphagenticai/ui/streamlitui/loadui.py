@@ -19,8 +19,8 @@ class LoadStreamlitUI:
         }
 
     def load_streamlit_ui(self):
-        st.set_page_config(page_title= "🤖 " + self.config.get_page_title(), layout="wide")
-        st.header("🤖 " +self.config.get_page_title())
+        st.set_page_config(page_title=self.config.get_page_title(), layout="wide")
+        st.header(self.config.get_page_title())
         st.session_state.timeframe = ''
         st.session_state.IsFetchButtonClicked = False
         st.session_state.IsSDLC=False
@@ -37,7 +37,7 @@ class LoadStreamlitUI:
                 self.user_controls['GROQ_API_KEY']=st.session_state['GROQ_API_KEY']=st.text_input("API_key",type="password")
 
                 if not self.user_controls['GROQ_API_KEY']:
-                    st.warning("⚠️ Please enter your GROQ API key to proceed. Don't have? refer : https://console.groq.com/keys ")
+                    st.warning("Please enter your GROQ API key to proceed. Don't have? refer : https://console.groq.com/keys ")
 
             self.user_controls['selected_usecase']=st.selectbox("Select Usecase", usecase_options)
             
